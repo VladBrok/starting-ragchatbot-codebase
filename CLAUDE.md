@@ -88,3 +88,4 @@ The system uses Claude's tool calling capabilities rather than traditional RAG c
 - ChromaDB data persisted in `./chroma_db` directory
 - Development server includes no-cache headers for frontend static files
 - CORS enabled for development with permissive settings
+- the server is always running by default, no need to launch it. after code changes are made, the server automatically restarts

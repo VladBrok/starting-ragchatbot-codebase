@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv() 
 
 @dataclass
 class Config:
@@ -25,5 +25,3 @@ class Config:
     CHROMA_PATH: str = "./chroma_db"  # ChromaDB storage location
 
 config = Config()
-
-
