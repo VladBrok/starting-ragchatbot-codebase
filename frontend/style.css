@@ -357,6 +357,25 @@ header h1 {
     margin: 1rem 0;
 }
 
+/* Links in message content */
+.message-content a {
+    color: #60a5fa;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.message-content a:hover {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.message-content a:focus {
+    outline: none;
+    color: #93c5fd;
+    text-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3);
+}
+
 /* Chat Input Container */
 .chat-input-container {
     display: flex;
@@ -632,6 +651,36 @@ details[open] .suggested-header::before {
     text-transform: none;
 }
 
+/* New Chat Button */
+.new-chat-button {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem 0;
+    border: none;
+    background: none;
+    list-style: none;
+    outline: none;
+    transition: color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    width: 100%;
+}
+
+.new-chat-button:focus {
+    color: var(--primary-color);
+}
+
+.new-chat-button:hover {
+    color: var(--primary-color);
+}
+
+.new-chat-button:active {
+    color: var(--primary-color);
+}
+
 /* Suggested Questions in Sidebar */
 .suggested-items {
     display: flex;
@@ -642,7 +691,7 @@ details[open] .suggested-header::before {
 
 .suggested-item {
     padding: 0.75rem 1rem;
-    background: var(--background);
+    background: #6b7280;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--text-primary);
@@ -659,7 +708,7 @@ details[open] .suggested-header::before {
 }
 
 .suggested-item:hover {
-    background: var(--surface-hover);
+    background: #4b5563;
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateX(2px);
@@ -738,6 +787,11 @@ details[open] .suggested-header::before {
     
     .suggested-item {
         padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    
+    .new-chat-button {
+        padding: 0.5rem 0;
         font-size: 0.8rem;
     }
 }
