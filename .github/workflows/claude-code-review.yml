@@ -42,14 +42,15 @@ jobs:
 
           # Direct prompt for automated review (no @claude mention needed)
           direct_prompt: |
-            Please review this pull request and provide feedback on:
-            - Code quality and best practices
-            - Potential bugs or issues
-            - Performance considerations
-            - Security concerns
-            - Test coverage
+            Review this PR and identify issues only. Focus on:
+            - Bugs and potential runtime errors
+            - Logic errors
+            - Security vulnerabilities
+            - Performance problems
+            - Missing error handling
+            - Code that violates best practices
             
-            Be constructive and helpful in your feedback.
+            Provide specific line comments on problematic code. Be concise and actionable. Do not mention what works well.
 
           # Optional: Use sticky comments to make Claude reuse the same comment on subsequent pushes to the same PR
           # use_sticky_comment: true
@@ -75,4 +76,3 @@ jobs:
           # if: |
           #   !contains(github.event.pull_request.title, '[skip-review]') &&
           #   !contains(github.event.pull_request.title, '[WIP]')
-
