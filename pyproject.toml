@@ -14,3 +14,28 @@ dependencies = [
     "python-dotenv==1.1.1",
     "pytest>=8.4.1",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

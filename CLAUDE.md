@@ -25,6 +25,26 @@ uv sync
 
 # Add new dependency
 uv add <package-name>
+
+# Add development dependency
+uv add --dev <package-name>
+```
+
+### Code Quality Tools
+```bash
+# Format code with black
+./scripts/format.sh
+# OR manually:
+uv run black .
+
+# Run all quality checks (formatting + tests)
+./scripts/check.sh
+
+# Check formatting without fixing
+uv run black --check .
+
+# Run tests only
+uv run pytest backend/tests/ -v
 ```
 
 ### Environment Setup
@@ -82,12 +102,13 @@ The system uses Claude's tool calling capabilities rather than traditional RAG c
 
 ## Development Notes
 
-- No test framework currently configured
-- No linting tools configured in project
+- Test framework: pytest (configured)
+- Code formatting: black (configured with 88 character line length)
 - Uses `uv` for Python package management instead of pip/poetry
 - ChromaDB data persisted in `./chroma_db` directory
 - Development server includes no-cache headers for frontend static files
 - CORS enabled for development with permissive settings
 - the server is always running by default, no need to launch it. after code changes are made, the server automatically restarts
+- Quality check scripts available in `./scripts/` directory
 
 # ultrathink
